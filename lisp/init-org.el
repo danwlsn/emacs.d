@@ -109,16 +109,15 @@ typical word processor."
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(setq org-agenda-files (list "~/org"))
+
 (setq org-capture-templates
-      `(("t" "todo" entry (file "")  ; "" => `org-default-notes-file'
-         "* NEXT %?\n%U\n" :clock-resume t)
-        ("n" "note" entry (file "")
-         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
-        ))
-
-
+      '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a")))
 
-;;; Refiling
+;; Refiling
 
 (setq org-refile-use-cache nil)
 

@@ -170,8 +170,7 @@
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
-(require 'init-local nil t)
-
+(require 'init-local)
 
 
 (provide 'init)

@@ -381,4 +381,7 @@ typical word processor."
      (sqlite . t))))
 
 
+;; custom stuff
+(org-bullets-mode t)
+
 (provide 'init-org)

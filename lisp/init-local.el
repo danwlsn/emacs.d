@@ -40,7 +40,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 ;; go go gadget emacs
-(setq-default initial-scratch-message
+(setq-default initial-scratch-message ";; Go Go Gadget Emacs")atch-message
               (concat ";; go go gadget emacs"))
 
 

@@ -2,7 +2,7 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-solarized))
+(setq-default custom-enabled-themes '(sanityinc-tomorrow-eighties))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -30,10 +30,24 @@
   (setq custom-enabled-themes '(sanityinc-tomorrow-bright))
   (reapply-themes))
 
+(defun solar ()
+  "Activate a solarized theme"
+  (interactive)
+  (setq custom-enabled-themes '(sanityinc-solarized-dark))
+  (reapply-themes))
+
+(defun eighties ()
+  "Activate a eighties theme"
+  (interactive)
+  (setq custom-enabled-themes '(sanityinc-tomorrow-eighties))
+  (reapply-themes))
 
 (when (maybe-require-package 'dimmer)
   (setq-default dimmer-fraction 0.15)
-  (add-hook 'after-init-hook 'dimmer-mode))
+  (add-hook 'after-init-hook 'dimmer-mode)
+  ;; TODO: file upstream as a PR
+  (after-load 'dimmer
+    (advice-add 'frame-set-background-mode :after (lambda (&rest args) (dimmer-process-all)))))
 
 
 (provide 'init-themes)

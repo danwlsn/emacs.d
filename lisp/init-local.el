@@ -1,6 +1,7 @@
 (global-display-line-numbers-mode)
 
 ;; the good old vim keybindings
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
 
@@ -40,8 +41,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 ;; go go gadget emacs
-(setq-default initial-scratch-message ";; Go Go Gadget Emacs")atch-message
-              (concat ";; go go gadget emacs"))
+(setq-default initial-scratch-message ";; Go Go Gadget Emacs")
 
 
 

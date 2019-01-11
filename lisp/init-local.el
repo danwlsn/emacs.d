@@ -15,6 +15,11 @@
 (set-face-background hl-line-face "color-236")
 
 ;; elpy
+(package-initialize)
+(elpy-enable)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 
 ;; font size

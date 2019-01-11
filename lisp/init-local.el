@@ -4,6 +4,7 @@
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
+(define-key evil-normal-state-map "M-." 'elpy-goto-definition)
 
 ;; Key chord for jk to exit inster mode
 (require 'key-chord)

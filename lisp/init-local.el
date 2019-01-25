@@ -1,11 +1,11 @@
 (global-display-line-numbers-mode)
 
 ;; the good old vim keybindings
-(require 'evil)
+(require-package 'evil)
 (evil-mode 1)
 
 ;; Key chord for jk to exit inster mode
-(require 'key-chord)
+(require-package 'key-chord)
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
@@ -40,9 +40,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 ;; go go gadget emacs
-(setq-default initial-scratch-message ";; Go Go Gadget Emacs")atch-message
-              (concat ";; go go gadget emacs"))
-
+(setq-default initial-scratch-message ";; Go Go Gadget Emacs")
 
 
 (provide 'init-local)

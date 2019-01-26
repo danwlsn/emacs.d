@@ -3,6 +3,7 @@
 ;; the good old vim keybindings
 (require-package 'evil)
 (evil-mode 1)
+(define-key evil-normal-state-map "M-." 'elpy-goto-definition)
 
 ;; Key chord for jk to exit inster mode
 (require-package 'key-chord)
@@ -14,6 +15,11 @@
 (set-face-background hl-line-face "color-236")
 
 ;; elpy
+(package-initialize)
+(elpy-enable)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 
 ;; font size

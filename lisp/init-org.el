@@ -7,6 +7,8 @@
 
 (maybe-require-package 'org-cliplink)
 
+(require-package 'org-bullets)
+
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
 

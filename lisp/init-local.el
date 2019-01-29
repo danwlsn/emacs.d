@@ -49,6 +49,7 @@
 ;; go go gadget emacs
 (setq-default initial-scratch-message ";; Go Go Gadget Emacs")
 
-
+;; terms stuff
+(setq term-ansi-default-program "/bin/zsh")
 
 (provide 'init-local)

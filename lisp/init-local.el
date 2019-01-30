@@ -3,7 +3,6 @@
 ;; the good old vim keybindings
 (require-package 'evil)
 (evil-mode 1)
-(define-key evil-normal-state-map "M-." 'elpy-goto-definition)
 
 ;; Key chord for jk to exit inster mode
 (require-package 'key-chord)
@@ -34,6 +33,10 @@
 
 ;; Allow hash to be entered
 (define-key key-translation-map (kbd "M-3") (kbd "#"))
+
+;; remap M-. after elpy
+(define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
+(define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
 
 
 ;; 80 width stuff

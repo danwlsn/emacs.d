@@ -13,8 +13,12 @@
 (global-hl-line-mode t)
 (set-face-background hl-line-face "color-236")
 
-;; elpy
+;; Search
+(require-package 'elpy)
+
+;; ag
 (package-initialize)
+(require-package 'elpy)
 (elpy-enable)
 
 (setq python-shell-interpreter "ipython"

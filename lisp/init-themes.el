@@ -2,11 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(require-package 'nimbus-theme)
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-eighties))
+(setq-default custom-enabled-themes '(nimbus))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -44,6 +45,12 @@
   "Activate a eighties theme"
   (interactive)
   (setq custom-enabled-themes '(sanityinc-tomorrow-eighties))
+  (reapply-themes))
+
+(defun nimbus ()
+  "Activate the nimbus theme"
+  (interactive)
+  (setq custom-enabled-themes '(nimbus))
   (reapply-themes))
 
 (when (maybe-require-package 'dimmer)

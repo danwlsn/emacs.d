@@ -1,4 +1,4 @@
-;;; init-org.el --- Org-mode config -*- lexical-binding: t -*-
+;; init-org.el --- Org-mode config -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -118,12 +118,11 @@ typical word processor."
 (setq org-agenda-files (list "~/org"))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/inbox.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
+      '(("t" "Todo" entry (file+headline "~/org/master.org" "Refile")
+         "\n* TODO %?\n  %i\n  %a\n")
         ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")
-        ("b" "Blog" entry (file+olp+datetree "~/org/blog.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+        ))
 
 ;; Refiling
 

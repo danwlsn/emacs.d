@@ -34,9 +34,13 @@
 ;; Allow hash to be entered
 (define-key key-translation-map (kbd "M-3") (kbd "#"))
 
+;; sets elpy to use pytest-runner
+(setq elpy-test-runner 'elpy-test-pytest-runner)
+
 ;; remap M-. after elpy
 (define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
 (define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
+(define-key evil-normal-state-map "\C-;" 'iedit-mode)
 
 
 ;; 80 width stuff
@@ -53,5 +57,8 @@
 
 ;; terms stuff
 (setq term-ansi-default-program "/bin/zsh")
+
+;; frame size
+(when window-system (set-frame-size (selected-frame) 172 60))
 
 (provide 'init-local)

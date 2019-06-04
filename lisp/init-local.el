@@ -44,7 +44,6 @@
 ;; remap M-. after elpy
 (define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
 (define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
-(define-key evil-normal-state-map "\C-;" 'iedit-mode)
 
 
 ;; 80 width stuff

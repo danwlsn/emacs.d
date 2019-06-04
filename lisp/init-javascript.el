@@ -48,11 +48,11 @@
 
 ;; js-mode
 (setq-default js-indent-level preferred-javascript-indent-level)
+(setq-default js2-basic-offset preferred-javascript-indent-level)
+(setq-default javascript-indent-level preferred-javascript-indent-level)
 
 
 (add-to-list 'interpreter-mode-alist (cons "node" preferred-javascript-mode))
-
-
 
 (when (and (executable-find "ag")
            (maybe-require-package 'xref-js2))
@@ -61,8 +61,6 @@
     (add-hook 'js2-mode-hook
               (lambda () (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))))
 
-
-
 ;;; Coffeescript
 
 (after-load 'coffee-mode

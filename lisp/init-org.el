@@ -110,20 +110,20 @@ typical word processor."
 
 
 (setq org-support-shift-select t)
-
+
 ;;; Capturing
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(setq org-agenda-files (list "~/org"))
+(setq org-agenda-files (list "~/Dropbox/org"))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/master.org" "Refile")
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/master.org" "Refile")
          "\n* TODO %?\n  %i\n  %a\n")
-        ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
+        ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")
         ))
-
+
 ;; Refiling
 
 (setq org-refile-use-cache nil)

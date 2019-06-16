@@ -118,7 +118,7 @@ typical word processor."
 (setq org-agenda-files (list "~/Dropbox/org"))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/org/master.org" "Refile")
+      '(("t" "Todo" entry (file "~/Dropbox/org/inbox.org")
          "\n* TODO %?\n  %i\n  %a\n")
         ("j" "Journal" entry (file+olp+datetree "~/Dropbox/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")

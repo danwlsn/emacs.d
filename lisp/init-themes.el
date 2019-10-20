@@ -5,9 +5,10 @@
 (require-package 'nimbus-theme)
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'base16-theme)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(nimbus))
+(setq-default custom-enabled-themes '(base16-eighties))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -39,6 +40,12 @@
   "Activate a solarized theme"
   (interactive)
   (setq custom-enabled-themes '(sanityinc-solarized-dark))
+  (reapply-themes))
+
+(defun base-eighties ()
+  "Activate a eighties theme"
+  (interactive)
+  (load-theme 'base16-eighties t)
   (reapply-themes))
 
 (defun eighties ()

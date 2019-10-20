@@ -26,7 +26,7 @@
 
 
 ;; font size
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 140)
 
 
 ;; alt as meta

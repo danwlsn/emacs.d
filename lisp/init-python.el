@@ -9,6 +9,8 @@
 
 (require-package 'pip-requirements)
 
+(setenv "WORKON_HOME" "/home/wilson/.local/share/virtualenvs")
+
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python
     (add-hook 'python-mode-hook 'anaconda-mode)

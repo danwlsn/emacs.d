@@ -7,7 +7,22 @@
                 ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt"
+      fill-column 80)
+
 (require-package 'pip-requirements)
+;; elpy
+(require-package 'elpy)
+(elpy-enable)
+
+;; sets elpy to use pytest-runner
+(setq elpy-test-runner 'elpy-test-pytest-runner)
+
+
+;; remap M-. after elpy
+(define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
+(define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
 
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python

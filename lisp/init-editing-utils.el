@@ -107,6 +107,7 @@
     (diminish 'symbol-overlay-mode)
     (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
     (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
+    (define-key symbol-overlay-mode-map (kbd "M-c") 'symbol-overlay-remove-all)
     (define-key symbol-overlay-mode-map (kbd "M-p") 'symbol-overlay-jump-prev)))
 
 ;;----------------------------------------------------------------------------

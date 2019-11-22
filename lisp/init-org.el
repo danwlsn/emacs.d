@@ -403,8 +403,8 @@ typical word processor."
  '(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1 :foreground "#ff872c"))))
  '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2 :foreground "#fe612c"))))
  '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d"))))
- '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
- '(fixed-pitch ((t ( :family "monoid" :slant normal :weight normal :height 1.0 :width normal)))))
+ '(variable-pitch ((t (:family "Ubuntu Mono" :height 180 :weight light))))
+ '(fixed-pitch ((t ( :family "Iconsolata" :slant normal :weight normal :height 1.0 :width normal)))))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (add-hook 'org-mode-hook 'variable-pitch-mode)

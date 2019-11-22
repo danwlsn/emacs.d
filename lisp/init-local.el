@@ -9,6 +9,10 @@
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
+;; remap M-. after elpy
+(define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
+(define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
+
 ;; Highglight current line
 (global-hl-line-mode t)
 (set-face-background hl-line-face "color-236")

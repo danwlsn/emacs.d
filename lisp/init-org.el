@@ -391,11 +391,6 @@ typical word processor."
                         '(("^ *\\([-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-(custom-theme-set-faces
- 'user
- '(variable-pitch ((t (:family "Ubuntu Mono" :height 180 :weight light))))
- '(fixed-pitch ((t ( :family "Inconsolata" :slant normal :weight normal :height 1.0 :width normal)))))
-
 
 (require 'org-bullets)
 (custom-theme-set-faces
@@ -412,14 +407,6 @@ typical word processor."
  '(fixed-pitch ((t ( :family "monoid" :slant normal :weight normal :height 1.0 :width normal)))))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(add-hook 'org-mode-hook (lambda () (progn
-                                 (setq left-margin-width 2)
-                                 (setq right-margin-width 2)
-                                 (set-window-buffer nil (current-buffer)))))
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-(add-hook 'org-mode-hook 'visual-line-mode)
-
-(add-hook 'org-mode-hook 'visual-line-mode)
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
 

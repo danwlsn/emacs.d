@@ -15,7 +15,7 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 (setq-default
- blink-cursor-interval 0.4
+ blink-cursor-interval 0.1
  bookmark-default-file (expand-file-name ".bookmarks.el" user-emacs-directory)
  buffers-menu-max-size 30
  case-fold-search t
@@ -107,6 +107,7 @@
     (diminish 'symbol-overlay-mode)
     (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
     (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
+    (define-key symbol-overlay-mode-map (kbd "M-c") 'symbol-overlay-remove-all)
     (define-key symbol-overlay-mode-map (kbd "M-p") 'symbol-overlay-jump-prev)))
 
 ;;----------------------------------------------------------------------------

@@ -8,7 +8,7 @@
 (require-package 'base16-theme)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(base16-eighties))
+(setq-default custom-enabled-themes '(base16-atlas))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -46,6 +46,12 @@
   "Activate a eighties theme"
   (interactive)
   (load-theme 'base16-eighties t)
+  (reapply-themes))
+
+(defun base-atlas()
+  "Activate a eighties theme"
+  (interactive)
+  (load-theme 'base16-atlas t)
   (reapply-themes))
 
 (defun eighties ()

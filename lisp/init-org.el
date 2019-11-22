@@ -398,7 +398,26 @@ typical word processor."
 
 
 (require 'org-bullets)
+(custom-theme-set-faces
+ 'user
+ '(org-level-8 ((t (,@headline ,@variable-tuple))))
+ '(org-level-7 ((t (,@headline ,@variable-tuple))))
+ '(org-level-6 ((t (,@headline ,@variable-tuple))))
+ '(org-level-5 ((t (,@headline ,@variable-tuple))))
+ '(org-level-4 ((t (,@headline ,@variable-tuple :height 1 :foreground "#ffa12c"))))
+ '(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1 :foreground "#ff872c"))))
+ '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2 :foreground "#fe612c"))))
+ '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d"))))
+ '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
+ '(fixed-pitch ((t ( :family "monoid" :slant normal :weight normal :height 1.0 :width normal)))))
+
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'org-mode-hook (lambda () (progn
+                                 (setq left-margin-width 2)
+                                 (setq right-margin-width 2)
+                                 (set-window-buffer nil (current-buffer)))))
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(add-hook 'org-mode-hook 'visual-line-mode)
 
 (add-hook 'org-mode-hook 'visual-line-mode)
 (add-hook 'org-mode-hook 'variable-pitch-mode)

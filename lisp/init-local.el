@@ -24,16 +24,26 @@
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i --simple-prompt")
 
+;; shell
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-;; font size
+
+
+;; Font size
+(set-face-attribute 'default nil :font "Inconsolata")
 (set-face-attribute 'default nil :height 140)
 
 
-;; alt as meta
-(setq mac-option-key-is-meta t)
-(setq mac-command-key-is-meta nil)
-(setq mac-command-modifier nil)
-(setq mac-option-modifier 'meta)
+;; Alt as meta
+;; (setq mac-option-key-is-meta t)
+;; (setq mac-command-key-is-meta nil)
+;; (setq mac-command-modifier nil)
+;; (setq mac-option-modifier 'meta)
 
 ;; Allow hash to be entered
 (define-key key-translation-map (kbd "M-3") (kbd "#"))

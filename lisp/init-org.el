@@ -387,8 +387,22 @@ typical word processor."
 
 
 ;; custom stuff
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(custom-theme-set-faces
+ 'user
+ '(variable-pitch ((t (:family "Ubuntu Mono" :height 180 :weight light))))
+ '(fixed-pitch ((t ( :family "Inconsolata" :slant normal :weight normal :height 1.0 :width normal)))))
+
+
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(add-hook 'org-mode-hook 'visual-line-mode)
 
 (provide 'init-org)
 ;;; init-org.el ends here

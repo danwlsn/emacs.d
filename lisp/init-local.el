@@ -40,7 +40,7 @@
 
 ;; Font size
 (set-face-attribute 'default nil :font "Inconsolata")
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 160)
 
 ;; Allow hash to be entered
 (define-key key-translation-map (kbd "M-3") (kbd "#"))

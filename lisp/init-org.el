@@ -390,6 +390,8 @@ typical word processor."
 (require 'org-bullets)
 (custom-theme-set-faces
  'user
+ '(org-block ((t (:inherit fixed-pitch))))
+ '(org-code ((t (:inherit fixed-pitch))))
  '(org-level-8 ((t (,@headline ,@variable-tuple))))
  '(org-level-7 ((t (,@headline ,@variable-tuple))))
  '(org-level-6 ((t (,@headline ,@variable-tuple))))
@@ -399,7 +401,7 @@ typical word processor."
  '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2 :foreground "#fe612c"))))
  '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d"))))
  '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
- '(fixed-pitch ((t ( :family "monoid" :slant normal :weight normal :height 1.0 :width normal)))))
+ '(fixed-pitch ((t ( :family "Iconsolata" :slant normal :weight normal :height 0.8 :width normal)))))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (add-hook 'org-mode-hook (lambda () (progn

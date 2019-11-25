@@ -387,6 +387,11 @@ typical word processor."
 
 
 ;; custom stuff
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+
 (require 'org-bullets)
 (custom-theme-set-faces
  'user
@@ -401,13 +406,9 @@ typical word processor."
  '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2 :foreground "#fe612c"))))
  '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d"))))
  '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
- '(fixed-pitch ((t ( :family "Iconsolata" :slant normal :weight normal :height 0.8 :width normal)))))
+ '(fixed-pitch ((t ( :family "Iconsolata" :slant normal :weight normal :height 1.0 :width normal)))))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(add-hook 'org-mode-hook (lambda () (progn
-                                 (setq left-margin-width 2)
-                                 (setq right-margin-width 2)
-                                 (set-window-buffer nil (current-buffer)))))
 (add-hook 'org-mode-hook 'variable-pitch-mode)
 (add-hook 'org-mode-hook 'visual-line-mode)
 

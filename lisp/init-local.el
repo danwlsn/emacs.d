@@ -9,12 +9,37 @@
 (key-chord-mode 1)
 (key-chord-define evil-insert-state-map  "jk" 'evil-normal-state)
 
+;; remap M-. after elpy
+(define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
+(define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
+
 ;; Highglight current line
 (global-hl-line-mode t)
 (set-face-background hl-line-face "color-236")
 
+;; Search
+(require-package 'elpy)
 
-;; font size
+;; ag
+(package-initialize)
+(require-package 'elpy)
+(elpy-enable)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
+
+;; shell
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+
+
+;; Font size
+(set-face-attribute 'default nil :font "Inconsolata")
 (set-face-attribute 'default nil :height 140)
 
 ;; Allow hash to be entered
@@ -35,50 +60,5 @@
 
 ;; frame size
 (when window-system (set-frame-size (selected-frame) 172 60))
-
-;; shell stuff
-
-(defun preamble-regexp-alternatives (regexps)
-  "Return the alternation of a list of regexps."
-  (mapconcat (lambda (regexp)
-               (concat "\\(?:" regexp "\\)"))
-             regexps "\\|"))
-
-(defvar non-sgr-control-sequence-regexp nil
-  "Regexp that matches non-SGR control sequences.")
-
-(defun regexp-alternatives (regexps)
-  (mapconcat (lambda (regexp) (concat “\\(” regexp “\\)”)) regexps “\\|”))
-
-(setq non-sgr-control-sequence-regexp
-(regexp-alternatives
- '(;; icon name escape sequences
-   "\033\\][0-2];.*?\007"
-   ;; non-SGR CSI escape sequences
-   "\033\\[\\??[0-9;]*[^0-9;m]"
-   ;; noop
-   "\012\033\\[2K\033\\[1F"
-   )))
-
-(defun filter-non-sgr-control-sequences-in-region (begin end)
-  (save-excursion
-    (goto-char begin)
-    (while (re-search-forward
-            non-sgr-control-sequence-regexp end t)
-      (replace-match ""))))
-
-(defun filter-non-sgr-control-sequences-in-output (ignored)
-  (let ((start-marker
-         (or comint-last-output-start
-             (point-min-marker)))
-        (end-marker
-         (process-mark
-          (get-buffer-process (current-buffer)))))
-    (filter-non-sgr-control-sequences-in-region
-     start-marker
-     end-marker)))
-
-(add-hook 'comint-output-filter-functions
-          'filter-non-sgr-control-sequences-in-output)
 
 (provide 'init-local)

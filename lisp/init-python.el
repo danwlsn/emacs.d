@@ -20,9 +20,7 @@
 (setq elpy-test-runner 'elpy-test-pytest-runner)
 
 
-;; remap M-. after elpy
-(define-key evil-normal-state-map "\M-." 'elpy-goto-definition)
-(define-key evil-normal-state-map "\M->" 'elpy-goto-definition-other-window)
+(setenv "WORKON_HOME" "/home/wilson/.local/share/virtualenvs")
 
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python

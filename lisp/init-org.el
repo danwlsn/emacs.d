@@ -395,8 +395,15 @@ typical word processor."
 (require 'org-bullets)
 (custom-theme-set-faces
  'user
- '(org-block ((t (:inherit fixed-pitch))))
- '(org-code ((t (:inherit fixed-pitch))))
+ '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
+ '(fixed-pitch ((t ( :family "Inconsolata" :slant normal :weight normal :height 1.0 :width normal))))
+ '(org-block ((t (:inherit 'fixed-pitch))))
+ '(org-code ((t (:inherit 'fixed-pitch))))
+ '(org-todo ((t (:inherit 'fixed-pitch))))
+ '(org-done ((t (:inherit 'fixed-pitch))))
+ '(org-table ((t (:inherit 'fixed-pitch))))
+ '(org-checkbox ((t (:inherit 'fixed-pitch))))
+ '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
  '(org-level-8 ((t (,@headline ,@variable-tuple))))
  '(org-level-7 ((t (,@headline ,@variable-tuple))))
  '(org-level-6 ((t (,@headline ,@variable-tuple))))
@@ -404,9 +411,7 @@ typical word processor."
  '(org-level-4 ((t (,@headline ,@variable-tuple :height 1 :foreground "#ffa12c"))))
  '(org-level-3 ((t (,@headline ,@variable-tuple :height 1.1 :foreground "#ff872c"))))
  '(org-level-2 ((t (,@headline ,@variable-tuple :height 1.2 :foreground "#fe612c"))))
- '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d"))))
- '(variable-pitch ((t (:family "ETBembo" :height 180 :weight light))))
- '(fixed-pitch ((t ( :family "Iconsolata" :slant normal :weight normal :height 1.0 :width normal)))))
+ '(org-level-1 ((t (,@headline ,@variable-tuple :height 1.25 :foreground "#fd3a2d")))))
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (add-hook 'org-mode-hook 'variable-pitch-mode)
